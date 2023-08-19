@@ -23,5 +23,10 @@
     "pg": "^8.11.3",
     "sequelize": "^6.32.1",
     "toastr": "^2.1.4"
-  }
+  },
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

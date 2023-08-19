@@ -26,6 +26,12 @@ const User = db.define('user', {
   password: {
     type: dt.STRING,
     allowNull: false,
+    validate: {
+      len: {
+        args: [8, 12],
+        msg: 'El largo de la contraseña debe contener 8 caracteres'
+      }
+    }
   },
   foto: {
     type: dt.STRING,
