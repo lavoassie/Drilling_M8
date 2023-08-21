@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const router = express.Router();
 const bcrypt = require('bcrypt')
 
-const {auth_required} = require('../middlewares.js')
+const {verifyToken} = require('../middlewares/auth.js')
 const User = require('../models/users.model.js')
 
 
@@ -117,8 +117,8 @@ router.post('/read', function (req, res) {
   res.json(decoded)
 })
 
-// Ruta que está protegida por nuestro middleware llamado "auth_required"
-router.get('/my', auth_required, (req, res) => {
+// Ruta que está protegida por nuestro middleware llamado "verifyToken"
+router.get('/my', verifyToken, (req, res) => {
 
   // Info que viene desde el middleware
   const data = req.data
