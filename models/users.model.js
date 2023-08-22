@@ -2,7 +2,17 @@ const { DataTypes: dt } = require('sequelize')
 const db = require('./sequelize.config')
 
 const User = db.define('user', {
-  nombre: {
+  firstname: {
+    type: dt.STRING,
+    allowNull: false,
+    validate: {
+      len: {
+        args: [2, 45],
+        msg: 'El largo del nombre debe medir entre 2 y 45 caracteres'
+      }
+    }
+  },
+  lastname: {
     type: dt.STRING,
     allowNull: false,
     validate: {
@@ -26,15 +36,6 @@ const User = db.define('user', {
   password: {
     type: dt.STRING,
     allowNull: false,
-    validate: {
-      len: {
-        args: [8, 12],
-        msg: 'El largo de la contraseña debe contener 8 caracteres'
-      }
-    }
-  },
-  foto: {
-    type: dt.STRING,
   },
 }, {timestamps: true})
 

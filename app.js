@@ -9,8 +9,10 @@ const {engine} = require('express-handlebars')
 
 dotenv.config()
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//indexRouter carga la página
+var indexRouter = require('./routes/index.js');
+//authRouter hace la autentificación
+var authRouter = require('./routes/auth.js')
 
 var app = express();
 
@@ -37,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api', authRouter);
 
 
 // catch 404 and forward to error handler
