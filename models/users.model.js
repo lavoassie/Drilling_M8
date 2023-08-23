@@ -1,5 +1,6 @@
 const { DataTypes: dt } = require('sequelize')
-const db = require('./sequelize.config')
+const Sequelize = require('sequelize');
+const db = require('../config/sequelize.config.js')
 
 const User = db.define('user', {
   firstname: {
@@ -38,14 +39,5 @@ const User = db.define('user', {
     allowNull: false,
   },
 }, {timestamps: true})
-
-/*
-try {
-  db.sync()
-}
-catch(err) {
-  console.error('Something went wrong with the SYNC of the table Transferencia', err)
-}
-*/
 
 module.exports = User

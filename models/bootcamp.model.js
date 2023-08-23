@@ -1,5 +1,5 @@
 const { DataTypes: dt } = require('sequelize');
-const db = require('./sequelize.config');
+const db = require('../config/sequelize.config.js')
 
 const Bootcamp = db.define('bootcamp', {
     title: {
