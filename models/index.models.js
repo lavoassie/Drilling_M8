@@ -1,6 +1,7 @@
+//Archivo para relacionar User y Bootcamp
 const User = require('./users.model.js');
 const Bootcamp = require('./bootcamp.model.js');
-const db = require('../config/db.config.js');
+const db = require('../models/sequelize.config.js');
 const { insertData } = require('../utils/utils.js');
 
 User.belongsToMany(Bootcamp, {
@@ -24,4 +25,6 @@ async function run() {
     };
 };
 
-module.exports = run;
+
+
+module.exports = { User, Bootcamp };

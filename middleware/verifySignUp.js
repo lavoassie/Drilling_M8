@@ -1,5 +1,5 @@
-//TODO: ELIMINAR AUTH.JS DE LA CARPETA ROUTES
 //Verifica si el correo ya se encuentra ingresado al momento de registrarse un nuevo usuario
+
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const router = express.Router();
@@ -8,14 +8,6 @@ const bcrypt = require("bcrypt");
 const User = require("../models/users.model.js");
 
 
-const users = [
-  { id: 1, nombre: "Carlos Salvo", email: "csalvo@gmail.com", pass: "abc123" },
-  { id: 1, nombre: "Paola Brito", email: "pbrito@gmail.com", pass: "1234" },
-  { id: 1, nombre: "Diego Pinto", email: "dpinto@gmail.com", pass: "1111" },
-];
-
-
-/* Para crear un JWT. */
 // Ruta para registrar un nuevo usuario
 router.post("/login", async function (req, res) {
   const { email, password } = req.body;

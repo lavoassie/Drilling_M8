@@ -9,15 +9,13 @@ const Bootcamp = db.define('bootcamp', {
     cue: {
         type: dt.INTEGER,
         allowNull: false,
-        validate: {
-            min: 5,
-            max: 20
-        }
+        default: 1,
     },
     description: {
         type: dt.STRING,
         allowNull: false
     }
 }, { timestamps: true});
+
 
 module.exports = Bootcamp;

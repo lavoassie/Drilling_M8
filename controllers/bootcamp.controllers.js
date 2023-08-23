@@ -1,4 +1,4 @@
-const User = require('../models/user.model.js');
+const User = require('../models/users.model.js');
 const Bootcamp = require('../models/bootcamp.model.js');
 
 // • Crear y guardar un nuevo Bootcamp llamado createBootcamp.

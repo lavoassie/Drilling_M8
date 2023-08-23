@@ -1,5 +1,5 @@
 const userController = require('../controllers/user.controller');
-const bootcampController = require('../controllers/bootcamp.controller');
+const bootcampController = require('../controllers/bootcamp.controllers.js');
 
 async function createUsers() {
     await userController.createUser('Mateo', 'Díaz', 'mateo.diaz@correo.com');

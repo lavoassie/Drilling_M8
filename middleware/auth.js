@@ -1,3 +1,4 @@
+
 //Contiene una función para verificar el token llamada verifyToken()
 
 const jwt = require('jsonwebtoken')

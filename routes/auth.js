@@ -48,7 +48,7 @@ router.post('/signup', async function(req, res, next) {
 
   // 1. Recibo los parámetros del formulario
   const {firstname, lastname, email, password} = req.body
-    console.log(firstname, lastname);
+
   // 2. Verificamos que los 4 campos existan
   if (!firstname || !lastname || !email || !password) {
     return res.status(400).json({
