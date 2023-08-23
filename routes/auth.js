@@ -7,7 +7,7 @@ const {verifyToken} = require('../middleware/auth.js')
 const User = require('../models/users.model.js')
 
 
-/* Para crear un JWT. */
+/* Para crear un JWT. ya está OK */
 router.post('/login', async function(req, res, next) {
 
   // 1. Recibo los parámetros del formulario
@@ -43,7 +43,7 @@ router.post('/login', async function(req, res, next) {
   res.json(token);
 });
 
-/* Para crear un JWT. */
+/* Para crear un JWT. ya está OK*/
 router.post('/signup', async function(req, res, next) {
 
   // 1. Recibo los parámetros del formulario

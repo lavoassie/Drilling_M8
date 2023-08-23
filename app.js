@@ -13,6 +13,7 @@ dotenv.config()
 var indexRouter = require('./routes/index.js');
 //authRouter hace la autentificación
 var authRouter = require('./routes/auth.js')
+var usersRouter = require('./routes/users.routes.js')
 
 var app = express();
 
@@ -40,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 app.use('/', indexRouter);
 app.use('/api', authRouter);
-
+app.use(usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
