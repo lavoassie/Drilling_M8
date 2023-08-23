@@ -2,29 +2,18 @@
 const User = require('./users.model.js');
 const Bootcamp = require('./bootcamp.model.js');
 const db = require('../models/sequelize.config.js');
-const { insertData } = require('../utils/utils.js');
 
-User.belongsToMany(Bootcamp, {
-    through: 'user_bootcamp',
-    as: 'bootcamps',
-    foreignKey: 'user_id'
-});
+User.belongsToMany(Bootcamp, {through: 'UserBootcamp', as: 'bootcamps'});
+Bootcamp.belongsToMany(User, {through: 'UserBootcamp', as: 'users'});
 
-Bootcamp.belongsToMany(User, {
-    through: 'user_bootcamp',
-    as: 'users',
-    foreignKey: 'bootcamp_id'
-});
-
-async function run() {
-    try {
-        await db.sync({force: true});
-        await insertData();
-    } catch (error) {
-        console.error('Something went wrong with the SYNC of the table User', error);
-    };
+try {
+    db.sync();
+    console.log('Se ha sincronizado con la Base de Datos');
+} catch(err) {
+    console.log('No se pudo sincronizar con la Base de Datos', err);
 };
 
+module.exports = { User, Bootcamp };
 
 
 module.exports = { User, Bootcamp };
