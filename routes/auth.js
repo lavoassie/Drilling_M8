@@ -7,12 +7,6 @@ const {verifyToken} = require('../middleware/auth.js')
 const User = require('../models/users.model.js')
 
 
-const users = [
-  {id: 1, nombre: 'Carlos Salvo', email: 'csalvo@gmail.com', pass: 'abc123'},
-  {id: 1, nombre: 'Paola Brito', email: 'pbrito@gmail.com', pass: '1234'},
-  {id: 1, nombre: 'Diego Pinto', email: 'dpinto@gmail.com', pass: '1111'}
-]
-
 /* Para crear un JWT. */
 router.post('/login', async function(req, res, next) {
 
@@ -40,7 +34,8 @@ router.post('/login', async function(req, res, next) {
     data: {
       id: user.id,
       email: user.email,
-      nombre: user.nombre
+      firstname: user.firstname,
+      lastname: user.lastname
     }
   }, process.env.SECRET_KEY)
 
